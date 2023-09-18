@@ -1,0 +1,15 @@
+Options All -Indexes
+
+RewriteEngine On
+
+<IfModule mod_rewrite.c>
+# Activar rewrite
+RewriteEngine on
+#ErrorDocument 404 http://localhost/compra-venta/servidor/error
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^([a-zA-Z0-9-._/]+)$ index.php?url=$1
+
+</IfModule>
